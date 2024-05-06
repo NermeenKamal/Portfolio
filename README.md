@@ -1,3 +1,6 @@
+
+![Screenshot 2024-05-06 143827](https://github.com/NermeenKamal/Portfolio/assets/114883845/fa3ca96d-23dd-4833-94b5-0004d594bb5d)
+
 # Portfolio
 
 Welcome to my portfolio! Here, you'll find a showcase of my projects, learn more about me, and find my contact information.
