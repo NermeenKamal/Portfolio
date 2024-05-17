@@ -201,6 +201,24 @@ font-size:14px; margin-right:10px;
   margin-bottom: 41px;
 }
 
+
+.writer{
+  color: white;
+  text-transform: uppercase;
+}
+
+h4 {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
 @media only screen and (min-width: 640px ) and (max-width: 961px) { /* tablet, landscape iPad, lo-res laptops ands desktops */
   section img {
     margin-top: 0;
@@ -417,3 +435,7 @@ font-size:14px; margin-right:10px;
     flex-direction: column;
   }
 }
+
+
+
+
