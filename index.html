@@ -30,8 +30,8 @@
 </header>
 <section id="home">
   <div>
-  <h1>Hi!<span class="nr">👋</span></h1> <h2><b>I'm</b><span class="nr"><b> Nermeen Kamal</b></span></h2> 
-  <span class="nr">─────────────────── </span> <span>  Web developer</span>
+  <h1>Hi!<span class="nr">👋</span></h1> <h2><b>I'm</b><span class="nr"><b> Nermeen Kamal</b></span></h2>
+  <span class="nr">─────────────────── </span> <span class="writer">  Web developer</span>
   <p id="summary" style="line-height:1.5;">A passionate Computer Science student, <br>deeply immersed in the world of AI, <br>web development, Software development.</p>
   <button type="button" class="btn1" onclick="window.location.href='https://www.linkedin.com/in/nirmn-kamal/'">Hire Me <i class="fa fa-telegram" style="font-size:14px;color:white"></i></button>
 <button type="button" name="button" class="btn">View Projects</button>
@@ -47,7 +47,7 @@
      I excel at solving intricate challenges and pushing boundaries. <br>Beyond coding, I'm passionate about mentoring, 
       volunteering, <br> and indulging in creative pursuits like photography 📷 and design 🎨.</b></p> 
 <div class="b2">
-<button type="button" name="button" class="btn1" onclick="window.location.href='https://drive.google.com/file/d/13CCCsH1dnz_LpCLQKA1-tQ6imLmUqDBR/view?usp=drive_link'">Download CV  <i class="fa fa-file-text-o"></i></button>
+<button type="button" name="button" class="btn1" onclick="window.location.href='https://drive.google.com/file/d/1E_JyZUyATO3VakH_yBQX3tkiL41BNDaE/view?usp=drivesdk'">Download CV  <i class="fa fa-file-text-o"></i></button>
 <button type="button" onclick="window.location.href='mailto:nermeenkamal92@gmail.com'" name="button" class="btn">Email Me</button>
 </div>
 </div>
@@ -127,5 +127,47 @@ text-align: center; -webkit-text-security: disc; background: linear-gradient(to 
 </div>
 
 </footer>
+  <script>document.addEventListener('DOMContentLoaded',function(event){
+      // array with texts to type in typewriter
+      var dataText = [ "Web Developer", "UI/UX Designer", "Freelancer", "Software Developer"];
+
+      // type one text in the typwriter
+      // keeps calling itself until the text is finished
+      function typeWriter(text, i, fnCallback) {
+          // chekc if text isn't finished yet
+          if (i < (text.length)) {
+              // add next character to h1
+              document.querySelector(".writer").innerHTML = text.substring(0, i+1) +'<h4 aria-hidden="true"></h4>';
+
+              // wait for a while and call this function again for next character
+              setTimeout(function() {
+                  typeWriter(text, i + 1, fnCallback)
+              }, 100);
+          }
+          // text finished, call callback if there is a callback function
+          else if (typeof fnCallback == 'function') {
+              // call callback after timeout
+              setTimeout(fnCallback, 700);
+          }
+      }
+      // start a typewriter animation for a text in the dataText array
+      function StartTextAnimation(i) {
+          if (typeof dataText[i] == 'undefined'){
+              setTimeout(function() {
+                  StartTextAnimation(0);
+              }, 20000);
+          }
+          // check if dataText[i] exists
+          if (i < dataText[i].length) {
+              // text exists! start typewriter animation
+              typeWriter(dataText[i], 0, function(){
+                  // after callback (and whole text has been animated), start next text
+                  StartTextAnimation(i + 1);
+              });
+          }
+      }
+      // start the text animation
+      StartTextAnimation(0);
+  });</script>
 </body>
 </html>
